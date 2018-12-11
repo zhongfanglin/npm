@@ -1,0 +1,73 @@
+html, body, ul, ol {
+  margin: 0;
+  padding: 0; }
+
+.box .title {
+  font-size: 18px;
+  padding-left: 10px; }
+
+.box .content {
+  padding: 10px; }
+  .box .content .pager {
+    text-align: center; }
+
+.box:hover {
+  outline: 1px solid #ddd; }
+
+.demo {
+  font-family: fantasy;
+  font-size: 30em;
+  font-weight: bold; }
+
+#main {
+  color: black; }
+  #main-sidebar {
+    border: 1px solid; }
+
+.container {
+  width: 100%; }
+
+article[role="main"] {
+  float: left;
+  width: 62.5%; }
+
+aside[role="complementary"] {
+  float: right;
+  width: 31.25%; }
+
+.message, .success, .error, .warning {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333; }
+
+.success {
+  border-color: green; }
+
+.error {
+  border-color: red; }
+
+.warning {
+  border-color: yellow; }
+
+.div1 {
+  background-color: #aeaeae; }
+
+#main {
+  width: 5em; }
+
+#sidebar {
+  width: 5em; }
+
+.class1 {
+  font-size: 16px;
+  display: block;
+  margin-left: 12px;
+  margin-right: 13px;
+  padding: 15px; }
+
+.class2 {
+  font-size: 16px;
+  display: block;
+  margin-left: 12px;
+  margin-right: 13px;
+  padding: 12px; }

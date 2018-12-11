@@ -1,0 +1,95 @@
+@import 'b';
+.box {
+  .title {// 相当于 .box .title
+    font-size: 18px;
+    padding-left: 10px;
+  }
+  .content {
+    padding: 10px;
+    .pager {
+      text-align: center;
+    }
+  }
+  // &表示外层的元素
+  &:hover { // 相当于 .box:hover
+    outline: 1px solid #ddd;
+  }
+}
+.demo {
+  // 命令空间后带有冒号:
+  font: {
+    family: fantasy;
+    size: 30em;
+    weight: bold;
+  }
+}
+#main {
+  color: black;
+  &-sidebar { border: 1px solid; }
+}
+.container { width: 100%; }
+
+article[role="main"] {
+  float: left;
+  width: 600px / 960px * 100%;
+}
+
+aside[role="complementary"] {
+  float: right;
+  width: 300px / 960px * 100%;
+}
+%other-styles {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+%message-common {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.message {
+  @extend %message-common;
+}
+
+.success {
+  @extend %message-common;
+  border-color: green;
+}
+
+.error {
+  @extend %message-common;
+  border-color: red;
+}
+
+.warning {
+  @extend %message-common;
+  border-color: yellow;
+}
+$color1:#aeaeae;
+.div1{
+    background-color:$color1;
+}
+#main {
+  $width: 5em !global;
+  width: $width;
+}
+
+#sidebar {
+  width: $width;
+}
+@mixin common($value1,$value2,$defaultValue:12px){
+    display:block;
+    margin-left:$value1;
+    margin-right:$value2;
+    padding:$defaultValue;
+}
+.class1{
+    font-size:16px;
+    @include common(12px,13px,15px);
+}
+.class2{
+    font-size:16px;
+    @include common(12px,13px);
+}

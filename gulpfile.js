@@ -7,7 +7,9 @@ var babel = require('gulp-babel');
 var del=require('del');
 var connect= require('gulp-connect'); 
 var watch = require('gulp-watch');
-var revCollector = require('gulp-rev-collector')
+var revCollector = require('gulp-rev-collector');
+var sass = require('gulp-sass');
+sass.compiler = require('node-sass');
 //生成哈希值
 var rev= require('gulp-rev');
 gulp.task('default',['htmlmin','minijs','watch','connect']);
@@ -68,3 +70,9 @@ gulp.task('watch',function(){
 gulp.task('clean',function(){
 	del(['dist']);
 })
+gulp.task('sass',function(){
+	gulp.src('sass/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(connect.reload());
+});
